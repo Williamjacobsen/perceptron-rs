@@ -48,6 +48,19 @@ fn text_to_vector(tokens: Vec<&str>, vocabulary: HashSet<String>) -> Vec<u16> {
     vector
 }
 
+fn encode_labels() {}
+
+/* TODO
+Encode labels — map your document types to numbers
+Initialize weights — a matrix W and bias b (random small values)
+Forward pass — multiply your vector by W, add b, apply softmax to get class probabilities
+Compute loss — cross-entropy between your predicted probabilities and the true label
+Backward pass — calculate gradients of the loss with respect to W and b
+Update weights — nudge W and b in the direction that reduces loss (SGD)
+Loop — repeat steps 3–6 over your training data for several epochs
+Evaluate — run on held-out test documents, check accuracy and a confusion matrix
+*/
+
 fn main() {
     let tokens: Vec<&str> = tokenize("this is a test");
     let records: Vec<Record> = read_training_set().unwrap();
